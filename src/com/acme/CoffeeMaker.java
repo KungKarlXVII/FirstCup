@@ -23,11 +23,11 @@ public class CoffeeMaker {
     }
 
 
-    public void serveCoffee(int numberOfCups){
+    public void serveCoffee(int numberOfCups) {
         if((numberOfServedCups + numberOfCups) <= MAX_LIMIT && this.power == true){
             numberOfServedCups += numberOfCups;
             numberOfCupsForAllMachines = numberOfCupsForAllMachines + numberOfCups;
-            System.out.println("Served one extremely hot coffee from machine: " + this.name);
+            System.out.println("Served " + numberOfCups + " cups of extremely hot coffee from machine: " + this.name);
         }
 
         else{
@@ -45,7 +45,7 @@ public class CoffeeMaker {
     }
 
     private void refillAndReset() {
-        System.out.println("Number of cups for machine reset");
+        System.out.println("Number of cups for machine: " + this.name + " reset to 0");
         numberOfServedCups = 0;
     }
 

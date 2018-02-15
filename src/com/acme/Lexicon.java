@@ -1,5 +1,7 @@
 package com.acme;
 
+import java.io.*;
+
 public class Lexicon {
 
     public static void main(String[] args) {
@@ -12,6 +14,11 @@ public class Lexicon {
 
         System.out.println(CoffeeMaker.getNumberOfCupsForAllMachines());
 
+        try ( PrintWriter writer = new PrintWriter("daily-report.txt", "UTF-8")) {
+            writer.println(CoffeeMaker.getNumberOfCupsForAllMachines());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         /*
          *  Break/Continue Example
